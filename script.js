@@ -1,6 +1,7 @@
-// Form Submission Handling
-document.getElementById('quoteForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  alert('Thank you for your inquiry! We will get back to you shortly.');
-  document.getElementById('quoteForm').reset();
+document.getElementById('quoteForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  // Handle form submission logic here (e.g., send to server or display success message)
+  alert('Your quote request has been submitted!');
 });
+
