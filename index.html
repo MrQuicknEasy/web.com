@@ -10,6 +10,44 @@
 </head>
 
 <body>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the background covers the full page */
+}
+
+.brown-rainbow-background {
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(
+        45deg, /* Angle of the gradient */
+        #8B4513, /* SaddleBrown */
+        #A0522D, /* Sienna */
+        #D2691E, /* Chocolate */
+        #CD853F, /* Peru */
+        #A52A2A, /* Brown */
+        #8B4513  /* SaddleBrown (to loop back) */
+    );
+    background-size: 400% 400%; /* Larger size for smooth animation */
+    animation: brownRainbow 10s ease infinite; /* Animation */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color */
+    text-align: center;
+}
+
+@keyframes brownRainbow {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Middle position */
+    }
+    100% {
+        background-position: 0% 50%; /* End position */
+    }
+}
   <!-- Header -->
   <header>
     <div class="container">
