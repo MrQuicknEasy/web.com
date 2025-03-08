@@ -1,45 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Smooth scrolling
-  document.querySelectorAll("nav ul li a").forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth"
-      });
-    });
-  });
-
-  // Scroll Fade-in Effect
-  const sections = document.querySelectorAll("section");
-
-  const fadeInOnScroll = () => {
-    sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.3;
-      if (sectionTop < screenPosition) {
-        section.style.opacity = "1";
-        section.style.transform = "translateY(0)";
-      }
-    });
-  };
-
-  window.addEventListener("scroll", fadeInOnScroll);
-
-  // Apply initial hidden state
-  sections.forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(30px)";
-    section.style.transition = "opacity 1s ease-out, transform 1s ease-out";
-  });
-
-  fadeInOnScroll();
-
-  // Quote Form Submission
   document.getElementById("quoteForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // Simulating a form submission success
-    alert("Your quote request has been submitted successfully!");
-    this.reset();
+    // Collect form data
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let service = document.getElementById("service").value;
+    let message = document.getElementById("message").value;
+
+    // Create email body
+    let mailtoLink = `mailto:Mrquickandeasy1@gmail.com?subject=Quote Request from ${name}&body=
+      Name: ${name}%0D%0A
+      Email: ${email}%0D%0A
+      Phone: ${phone}%0D%0A
+      Service Needed: ${service}%0D%0A
+      Message: ${message}%0D%0A`;
+
+    // Open the user's email app with the pre-filled details
+    window.location.href = mailtoLink;
+
+    // Reset form after opening email client
+    document.getElementById("quoteForm").reset();
   });
 });
