@@ -1,48 +1,42 @@
 /* General Styles */
-body, html { font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Ensure the background covers the full page */
+body, html {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the background covers the full page */
 }
 
 .brown-rainbow-background {
-    height: 100vh; /* Full viewport height */
-    background: linear-gradient(
-        45deg, /* Angle of the gradient */
-        #8B4513, /* SaddleBrown */
-        #A0522D, /* Sienna */
-        #D2691E, /* Chocolate */
-        #CD853F, /* Peru */
-        #A52A2A, /* Brown */
-        #8B4513  /* SaddleBrown (to loop back) */
-    );
-    background-size: 400% 400%; /* Larger size for smooth animation */
-    animation: brownRainbow 10s ease infinite; /* Animation */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white; /* Text color */
-    text-align: center;
+  min-height: 100vh; /* Allow the page to grow as needed */
+  background: linear-gradient(
+    45deg, /* Angle of the gradient */
+    #8B4513, /* SaddleBrown */
+    #A0522D, /* Sienna */
+    #D2691E, /* Chocolate */
+    #CD853F, /* Peru */
+    #A52A2A, /* Brown */
+    #8B4513  /* SaddleBrown (to loop back) */
+  );
+  background-size: 400% 400%; /* Larger size for smooth animation */
+  animation: brownRainbow 10s ease infinite; /* Animation */
+  color: white; /* Text color */
+  text-align: center;
 }
 
 @keyframes brownRainbow {
-    0% {
-        background-position: 0% 50%; /* Start position */
-    }
-    50% {
-        background-position: 100% 50%; /* Middle position */
-    }
-    100% {
-        background-position: 0% 50%; /* End position */
-    }
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  50% {
+    background-position: 100% 50%; /* Middle position */
+  }
+  100% {
+    background-position: 0% 50%; /* End position */
+  }
 }
 
-  
- 
-
 .container {
-  width: 80%;
+  width: 90%; /* Adjusted for better responsiveness */
   margin: 0 auto;
 }
 
@@ -125,9 +119,10 @@ h3 {
 }
 
 .service-item, .testimonial-item {
-  background-color: #f1f1f1;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
   padding: 20px;
   border-radius: 5px;
+  color: #333; /* Dark text for better readability */
 }
 
 .testimonial-item p {
@@ -155,9 +150,18 @@ h3 {
 }
 
 /* Quote Form */
+.quote {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
 form label {
   display: block;
   margin-bottom: 8px;
+  color: #333; /* Dark text for better readability */
 }
 
 form input, form select, form textarea {
@@ -188,4 +192,3 @@ footer {
   text-align: center;
   padding: 20px 0;
 }
-
