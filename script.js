@@ -24,3 +24,36 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("quoteForm").reset();
   });
 });
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.querySelectorAll(".slide");
+    let dots = document.querySelectorAll(".dot");
+
+    // Hide all slides
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    // Increment slide index
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+
+    // Show the current slide and activate the corresponding dot
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("active");
+
+    // Change slide every 3 seconds
+    setTimeout(showSlides, 3000);
+}
+
+// Navigation Arrows
+document.querySelector(".prev").addEventListener("click", function () {
+    slideIndex -= 2;
+    if (slideIndex < 0) { slideIndex = 0; }
+    showSlides();
+});
+
+document.querySelector(".next").addEventListener("click", function () {
+    showSlides();
+});
