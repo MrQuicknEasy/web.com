@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services</title>
     <style>
-        /* Existing styles remain unchanged */
-        /* Add these new styles */
-        
+        /* Previous styles remain unchanged */
         .service img {
             width: 100%;
             height: 180px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .service.expanded {
-            transform: scale(1.05);
-            background: rgba(0, 255, 204, 0.1);
-            box-shadow: 0 0 30px rgba(0, 255, 204, 0.4);
+            border: 2px solid rgba(0, 255, 204, 0.3);
         }
 
         .service-details {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-out;
+            color: #a0a0a0;
+            font-size: 0.85rem;
+        }
+
+        .service.expanded {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+            background: rgba(0, 255, 204, 0.05);
         }
 
         .video-section {
@@ -43,18 +43,7 @@
             margin: 20px auto;
             border-radius: 12px;
             border: 2px solid #00ffcc;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .rating-section {
-            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
         }
 
         .rating-stars {
@@ -62,24 +51,19 @@
             justify-content: center;
             gap: 10px;
             cursor: pointer;
+            margin-top: 15px;
         }
 
         .star {
             font-size: 24px;
             color: #666;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .star:hover,
         .star.active {
             color: #ffd700;
             transform: scale(1.2);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 255, 204, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0); }
         }
     </style>
 </head>
@@ -93,17 +77,15 @@
     <!-- Video Section -->
     <section class="video-section">
         <div class="container">
-            <h2>Our Work in Action</h2>
+            <h2 style="color: #00ffcc; text-shadow: 0 0 10px #00ffcc;">Our Work Process</h2>
             <div class="video-container">
-                <!-- Replace VIDEO_ID with your actual YouTube video ID -->
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
                         frameborder="0" 
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
                 </iframe>
             </div>
             <div class="rating-section">
-                <h3>Rate Our Work</h3>
+                <h3>Rate Our Services</h3>
                 <div class="rating-stars">
                     <div class="star" data-rating="1">★</div>
                     <div class="star" data-rating="2">★</div>
@@ -117,47 +99,78 @@
 
     <div class="container">
         <div class="services">
-            <!-- Updated Service Example -->
+            <!-- All Services with Images and Descriptions -->
             <div class="service">
-                <img src="handyman.jpg" alt="Handyman Services">
+                <img src="images/handyman.jpg" alt="Handyman Services">
                 <h3>Handyman Services</h3>
-                <p>Comprehensive home repair and maintenance solutions tailored to your needs.</p>
+                <p>Comprehensive home solutions</p>
                 <div class="service-details">
-                    <p>Our expert handymen provide same-day service for all your household repairs. From minor fixes to major renovations, we handle it all with precision and care.</p>
+                    24/7 emergency repairs, maintenance packages, and professional consultations.
                 </div>
             </div>
-            <!-- Repeat for other services with appropriate images and details -->
+
+            <div class="service">
+                <img src="images/headboard.jpg" alt="Headboard Mounting">
+                <h3>Headboard Mounting</h3>
+                <p>Secure bedroom installations</p>
+                <div class="service-details">
+                    Custom mounting solutions for all bed types with hidden fasteners.
+                </div>
+            </div>
+
+            <div class="service">
+                <img src="images/shelves.jpg" alt="Installing Shelves">
+                <h3>Installing Shelves</h3>
+                <p>Custom storage solutions</p>
+                <div class="service-details">
+                    Floating shelves, corner units, and heavy-duty installations with load testing.
+                </div>
+            </div>
+
+            <!-- Continue with all services following the same pattern -->
+            <!-- Remaining services with brief descriptions -->
+            <div class="service">
+                <img src="images/mirror.jpg" alt="Mirror Hanging">
+                <h3>Mirror Hanging</h3>
+                <p>Precision placement</p>
+                <div class="service-details">
+                    Anti-fog bathroom mirrors, decorative wall arrays, and safety-secured installations.
+                </div>
+            </div>
+
+            <div class="service">
+                <img src="images/art.jpg" alt="Photo & Picture Hanging">
+                <h3>Photo & Picture Hanging</h3>
+                <p>Gallery perfection</p>
+                <div class="service-details">
+                    Symmetrical layouts, heavy artwork mounting, and lighting-optimized placement.
+                </div>
+            </div>
+
+            <!-- Add remaining 20+ services following same structure -->
+            <!-- Example for TV Services -->
+            <div class="service">
+                <img src="images/tv.jpg" alt="TV Installation">
+                <h3>TV Installation & Mounting</h3>
+                <p>Optimal viewing setup</p>
+                <div class="service-details">
+                    Cable management, smart home integration, and articulating arm installations.
+                </div>
+            </div>
+
+            <!-- Continue pattern for all other services -->
         </div>
     </div>
 
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mr. Quick & Easy Handyman Services. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script>
-        // Service Click Effects
+        // Service Click Animation
         document.querySelectorAll('.service').forEach(service => {
             service.addEventListener('click', function() {
                 this.classList.toggle('expanded');
-                const details = this.querySelector('.service-details');
-                details.style.maxHeight = details.style.maxHeight ? null : `${details.scrollHeight}px`;
-                
-                // Add pulse animation
-                this.style.animation = 'pulse 1s ease';
-                setTimeout(() => {
-                    this.style.animation = '';
-                }, 1000);
-            });
-        });
-
-        // Rating System
-        const stars = document.querySelectorAll('.star');
-        stars.forEach(star => {
-            star.addEventListener('click', function() {
-                const rating = this.dataset.rating;
-                stars.forEach((s, index) => {
-                    s.classList.toggle('active', index < rating);
-                });
-                // Here you would typically send the rating to your server
-                console.log(`User rated: ${rating} stars`);
-            });
-        });
-    </script>
-</body>
-</html>
+                const details =
