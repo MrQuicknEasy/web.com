@@ -3,23 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services</title>
+    <title>Our Services - Mr. Quick & Easy Handyman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* 1. Dark Mode Integration */
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #121212;
             color: #e0e0e0;
             font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
             transition: background 0.3s ease, color 0.3s ease;
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header and Footer */
         header, footer {
             background-color: #1e1e1e;
             padding: 15px;
             text-align: center;
         }
 
-        /* 2. Micro-Interactions */
+        header h1 {
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        header a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Micro-Interactions */
         .service {
             background-color: #1e1e1e;
             border-radius: 12px;
@@ -34,7 +60,6 @@
             box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
         }
 
-        /* 3. Custom Illustrations (Placeholder) */
         .service img {
             width: 100%;
             height: 180px;
@@ -43,18 +68,21 @@
             border: 2px solid rgba(0, 255, 204, 0.3);
         }
 
-        /* 4. AI Chatbot (Placeholder) */
-        .chatbot-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #1e1e1e;
-            padding: 10px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        /* Video Section */
+        .video-section {
+            padding: 40px 0;
+            text-align: center;
         }
 
-        /* 5. Parallax Scrolling */
+        .video-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+            border-radius: 12px;
+        }
+
+        /* Parallax Scrolling */
         .parallax {
             background-image: url('background.jpg');
             min-height: 400px;
@@ -64,14 +92,7 @@
             background-size: cover;
         }
 
-        /* 6. Sustainable Design Practices (Optimized Images) */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* 7. Voice-Activated Interface */
+        /* Voice Search */
         .voice-search {
             text-align: center;
             margin: 20px 0;
@@ -81,65 +102,104 @@
             padding: 10px;
             border-radius: 5px;
             border: none;
+            width: 70%;
+            max-width: 300px;
         }
 
         .voice-search button {
             background-color: #00ffcc;
             color: #121212;
-            padding: 10px;
+            padding: 10px 15px;
             border-radius: 5px;
+            border: none;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        /* 8. Bold Typography */
+        .voice-search button:hover {
+            background-color: #00ccaa;
+        }
+
+        /* Bold Typography */
         h3 {
             font-weight: 700;
             color: #00ffcc;
             text-shadow: 0 0 10px #00ffcc;
         }
 
-        /* 9. Neumorphism */
+        /* Neumorphism */
         .neumorphic {
-            background: #e0e0e0;
+            background: #1e1e1e;
             border-radius: 12px;
-            box-shadow: 9px 9px 16px #bebebe, -9px -9px 16px #ffffff;
+            box-shadow: inset 5px 5px 10px #0a0a0a, inset -5px -5px 10px #323232;
             padding: 20px;
             text-align: center;
-            margin-top: 20px;
+            margin: 20px 0;
         }
 
-        /* 10. 3D Visuals (Placeholder) */
-        model-viewer {
-            width: 100%;
-            height: 400px;
-            margin: auto;
-            display: block;
+        /* AI Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .chatbot-container:hover {
+            transform: scale(1.02);
+        }
+
+        .chatbot-container iframe {
+            border: none;
+            width: 350px;
+            height: 430px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service {
+                margin: 10px;
+            }
+            .chatbot-container iframe {
+                width: 300px;
+                height: 400px;
+            }
+            .video-container iframe {
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Our Services</h1>
-        <a href="../index.html">Home</a>
+        <div class="container">
+            <h1>Our Services</h1>
+            <a href="../index.html">Home</a>
+        </div>
     </header>
-      </header>  <!-- Video Section -->  
-<section class="video-section">  
-    <div class="container">  
-        <h2 style="color: #00ffcc; text-shadow: 0 0 10px #00ffcc;">Our Work Process</h2>  
-        <div class="video-container">  
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"   
-                    frameborder="0"   
-                    allowfullscreen>  
-            </iframe>  
-        </div>  
-        
-    </div>  
-</section>  
 
-    <!-- 5. Parallax Section -->
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2>Our Work Process</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                        frameborder="0" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
     <div class="parallax"></div>
 
-    <!-- 7. Voice Search -->
+    <!-- Voice Search -->
     <div class="voice-search">
         <input type="text" id="voice-search" placeholder="Search our services">
         <button onclick="startVoiceRecognition()">🎤</button>
@@ -166,53 +226,74 @@
                 <div class="service-details">
                     Custom mounting solutions for all board types with hidden fasteners.
                 </div>
-
-                <!-- Service 3 -->
-            <div class="service">
-                <img src="shelves.jpg" alt="Headboard Mounting">
-                <h3>Shelf Installation</h3>
-                <p>Custom storage solutions</p>  
-                <div class="service-details">
-           Floating shelves, corner units, and heavy-duty installations with load testing
-                </div>
-
-                  <!-- Service 4 -->
-            <div class="service">
-                <img src="mirror.jpg" alt="Headboard Mounting">
-                <h3>Mirror Installation</h3>
-                <p>Precision Placement</p>  
-                <div class="service-details">
-                    Anti-fog bathroom mirrors, decorative wall arrays, and safety-secured installations.
-           </div>
             </div>
 
-            <!-- 9. Neumorphism Section -->
+            <!-- Service 3 -->
+            <div class="service">
+                <img src="shelves.jpg" alt="Shelf Installation">
+                <h3>Shelf Installation</h3>
+                <p>Custom storage solutions</p>
+                <div class="service-details">
+                    Floating shelves, corner units, and heavy-duty installations with load testing.
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service">
+                <img src="mirror.jpg" alt="Mirror Installation">
+                <h3>Mirror Installation</h3>
+                <p>Precision Placement</p>
+                <div class="service-details">
+                    Anti-fog bathroom mirrors, decorative wall arrays, and safety-secured installations.
+                </div>
+            </div>
+
+            <!-- Neumorphism Section -->
             <div class="neumorphic">
                 <h3>Neumorphic Design Feature</h3>
                 <p>This box uses a soft shadow effect to blend into the background.</p>
             </div>
 
-            <!-- 10. 3D Model Viewer -->
-            <model-viewer src="handyman_model.glb" alt="Handyman Service 3D Model" auto-rotate camera-controls></model-viewer>
+            <!-- 3D Model Viewer (if supported) -->
+            <!-- Uncomment and add model-viewer script if needed -->
+            <!-- <model-viewer src="handyman_model.glb" alt="Handyman Service 3D Model" auto-rotate camera-controls></model-viewer> -->
         </div>
     </div>
 
-    <!-- 4. AI Chatbot Placeholder -->
+    <!-- AI Chatbot -->
     <div class="chatbot-container">
-        <iframe height="430" width="350" src="https://bot.dialogflow.com/2e73a22e-a3a8-4253-81a1-3928b1359189"></iframe>
+        <iframe src="https://bot.dialogflow.com/2e73a22e-a3a8-4253-81a1-3928b1359189"></iframe>
         <p>💬 Need help? Chat with our AI assistant!</p>
     </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Mr. Quick & Easy Handyman Services. All rights reserved.</p>
+            <p>© 2025 Mr. Quick & Easy Handyman Services. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // 7. Voice Search Functionality
+        // Voice Search Functionality (Basic Implementation)
         function startVoiceRecognition() {
-            alert("Voice search activated (Feature in development).");
+            if ('webkitSpeechRecognition' in window) {
+                const recognition = new webkitSpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.lang = 'en-US';
+
+                recognition.onresult = (event) => {
+                    const transcript = event.results[0][0].transcript;
+                    document.getElementById('voice-search').value = transcript;
+                };
+
+                recognition.onerror = () => {
+                    alert('Voice recognition failed. Please try again.');
+                };
+
+                recognition.start();
+            } else {
+                alert('Voice recognition not supported in your browser.');
+            }
         }
     </script>
 </body>
