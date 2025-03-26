@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+n<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Mr. Quick & Easy Handyman</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Reset and Base Styles */
         * {
@@ -14,11 +15,10 @@
         }
 
         body {
-            background-color: #121212;
+            background: linear-gradient(135deg, #0a0a2a, #000000);
             color: #e0e0e0;
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            transition: background 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -53,11 +53,19 @@
             text-align: center;
             margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .service.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
         .service:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+            box-shadow: 0 0 25px #00ffcc;
         }
 
         .service img {
@@ -66,6 +74,29 @@
             object-fit: cover;
             border-radius: 8px;
             border: 2px solid rgba(0, 255, 204, 0.3);
+        }
+
+        .service i {
+            font-size: 2em;
+            color: #00ffcc;
+            margin-bottom: 10px;
+        }
+
+        .learn-more {
+            background: none;
+            border: none;
+            color: #00ffcc;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .learn-more:hover {
+            text-shadow: 0 0 5px #00ffcc;
+        }
+
+        .service-details {
+            display: none;
+            margin-top: 10px;
         }
 
         /* Video Section */
@@ -78,7 +109,8 @@
             width: 100%;
             max-width: 800px;
             height: 450px;
-            border: none;
+            border: 2px solid #00ffcc;
+            box-shadow: 0 0 10px #00ffcc;
             border-radius: 12px;
         }
 
@@ -113,48 +145,58 @@
             border-radius: 5px;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .voice-search button:hover {
             background-color: #00ccaa;
+            box-shadow: 0 0 10px #00ffcc;
         }
 
         /* Bold Typography */
         h3 {
             font-weight: 700;
             color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc;
+            text-shadow: 0 0 5px #00ffcc;
         }
 
-        /* Neumorphism */
+        /* Neumorphic Section */
         .neumorphic {
-            background: #1e1e1e;
+            background: linear-gradient(135deg, #1e1e1e, #121212);
             border-radius: 12px;
-            box-shadow: inset 5px 5px 10px #0a0a0a, inset -5px -5px 10px #323232;
             padding: 20px;
             text-align: center;
             margin: 20px 0;
+            box-shadow: 0 0 10px #00ffcc;
         }
 
         /* AI Chatbot */
-        .chatbot-container {
+        #chatbot-toggle {
             position: fixed;
             bottom: 20px;
+            right: 20px;
+            background: #00ffcc;
+            color: #121212;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        #chatbot-container {
+            position: fixed;
+            bottom: 60px;
             right: 20px;
             background: #1e1e1e;
             padding: 15px;
             border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+            box-shadow: 0 0 15px #00ffcc;
             z-index: 1000;
-            transition: transform 0.3s ease;
+            display: none;
         }
 
-        .chatbot-container:hover {
-            transform: scale(1.02);
-        }
-
-        .chatbot-container iframe {
+        #chatbot-container iframe {
             border: none;
             width: 350px;
             height: 430px;
@@ -165,7 +207,7 @@
             .service {
                 margin: 10px;
             }
-            .chatbot-container iframe {
+            #chatbot-container iframe {
                 width: 300px;
                 height: 400px;
             }
@@ -210,9 +252,10 @@
         <div class="services">
             <!-- Service 1 -->
             <div class="service">
-                <img src="handy.jpg" alt="Handyman Services">
+                <i class="fas fa-tools"></i>
                 <h3>Handyman Services</h3>
                 <p>Comprehensive home solutions</p>
+                <button class="learn-more">Learn More</button>
                 <div class="service-details">
                     24/7 emergency repairs, maintenance packages, and professional consultations.
                 </div>
@@ -220,9 +263,10 @@
 
             <!-- Service 2 -->
             <div class="service">
-                <img src="boardmount.jpg" alt="Headboard Mounting">
+                <i class="fas fa-bed"></i>
                 <h3>Headboard Mounting</h3>
                 <p>Secure board installations</p>
+                <button class="learn-more">Learn More</button>
                 <div class="service-details">
                     Custom mounting solutions for all board types with hidden fasteners.
                 </div>
@@ -230,9 +274,10 @@
 
             <!-- Service 3 -->
             <div class="service">
-                <img src="shelves.jpg" alt="Shelf Installation">
+                <i class="fas fa-box-open"></i>
                 <h3>Shelf Installation</h3>
                 <p>Custom storage solutions</p>
+                <button class="learn-more">Learn More</button>
                 <div class="service-details">
                     Floating shelves, corner units, and heavy-duty installations with load testing.
                 </div>
@@ -240,28 +285,27 @@
 
             <!-- Service 4 -->
             <div class="service">
-                <img src="mirror.jpg" alt="Mirror Installation">
+                <i class="fas fa-portrait"></i>
                 <h3>Mirror Installation</h3>
                 <p>Precision Placement</p>
+                <button class="learn-more">Learn More</button>
                 <div class="service-details">
                     Anti-fog bathroom mirrors, decorative wall arrays, and safety-secured installations.
                 </div>
             </div>
 
-            <!-- Neumorphism Section -->
+            <!-- Neumorphic Section -->
             <div class="neumorphic">
-                <h3>Neumorphic Design Feature</h3>
-                <p>This box uses a soft shadow effect to blend into the background.</p>
+                <h3>Special Offer</h3>
+                <p>Get 10% off on your first service booking!</p>
+                <button>Contact Us</button>
             </div>
-
-            <!-- 3D Model Viewer (if supported) -->
-            <!-- Uncomment and add model-viewer script if needed -->
-            <!-- <model-viewer src="handyman_model.glb" alt="Handyman Service 3D Model" auto-rotate camera-controls></model-viewer> -->
         </div>
     </div>
 
     <!-- AI Chatbot -->
-    <div class="chatbot-container">
+    <div id="chatbot-toggle">💬</div>
+    <div id="chatbot-container">
         <iframe src="https://bot.dialogflow.com/2e73a22e-a3a8-4253-81a1-3928b1359189"></iframe>
         <p>💬 Need help? Chat with our AI assistant!</p>
     </div>
@@ -273,7 +317,7 @@
     </footer>
 
     <script>
-        // Voice Search Functionality (Basic Implementation)
+        // Voice Search Functionality
         function startVoiceRecognition() {
             if ('webkitSpeechRecognition' in window) {
                 const recognition = new webkitSpeechRecognition();
@@ -295,6 +339,40 @@
                 alert('Voice recognition not supported in your browser.');
             }
         }
+
+        // Toggle Chatbot
+        document.getElementById('chatbot-toggle').addEventListener('click', () => {
+            const container = document.getElementById('chatbot-container');
+            container.style.display = container.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Expand Service Details
+        document.querySelectorAll('.learn-more').forEach(button => {
+            button.addEventListener('click', () => {
+                const details = button.nextElementSibling;
+                if (details.style.display === 'none') {
+                    details.style.display = 'block';
+                    button.textContent = 'Show Less';
+                } else {
+                    details.style.display = 'none';
+                    button.textContent = 'Learn More';
+                }
+            });
+        });
+
+        // Animate Services on Scroll
+        const services = document.querySelectorAll('.service');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        services.forEach(service => {
+            observer.observe(service);
+        });
     </script>
 </body>
-</html>
+    </html>
